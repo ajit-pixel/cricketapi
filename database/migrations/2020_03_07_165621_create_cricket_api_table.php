@@ -14,18 +14,16 @@ class CreateCricketApiTable extends Migration
     public function up()
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->id('unique_id'); 
-              
-            $table->json('date');    
-           
-            $table->json('dateTimeGMT');
-         
+            $table->id('unique_id');            
+            $table->longText('date')->nullable();
+            $table->longText('dateTimeGMT')->nullable();         
+                  
             $table->string('team-1');
             $table->string('team-2');            
             $table->boolean('squad');
-            $table->string('toss_winner_team');
+            $table->string('toss_winner_team',100);
             $table->boolean('matchStarted');
-            $table->string('type');
+            $table->string('type',100)->nullable();
             $table->timestamps();
         });
     }

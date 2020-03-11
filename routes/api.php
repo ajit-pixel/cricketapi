@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('cricket','Cricket\Cricket_Controller@get_api_data');
 Route::get('score','Cricket\Score_Controller@get_score');
+Route::get('calender','Cricket\Match_Calender@get_calender');
+Route::get('oldmatches','Cricket\OldMatches_Controller@get_oldmatch_details');
+Route::get('playerstat','Cricket\PlayerStatastic_Controller@get_playerstat');
